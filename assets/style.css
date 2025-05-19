@@ -1,0 +1,555 @@
+/* ===== ESTILOS GENERALES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #fcfbf6;
+}
+
+h1, h2, h3 {
+    font-family: "Delius", cursive;
+    font-weight: 400;
+    color: #101e5a;
+}
+
+/* ===== HEADER CON SLIDER ===== */
+.header-with-slider {
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.header-slides {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.header-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.header-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(16, 30, 90, 0.7);
+}
+
+.header-slide.active {
+    opacity: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    max-width: 800px;
+}
+
+.header-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.slogan {
+    font-family: "Nothing You Could Do", cursive;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.header-buttons {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 10;
+}
+
+
+/* ===== BARRA DE NAVEGACIÓN ===== */
+.semi-transparent-nav {
+    background-color: rgba(93, 128, 182, 0.65);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.semi-transparent-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.semi-transparent-nav a {
+    font-family: "Roboto Condensed", sans-serif;
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.semi-transparent-nav a:hover {
+    color: #f0f0f0;
+}
+
+.semi-transparent-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s;
+}
+
+.semi-transparent-nav a:hover::after {
+    width: 100%;
+}
+
+/* ===== BOTONES ===== */
+.login-button,
+.register-button {
+    font-family: "Roboto Condensed", sans-serif;
+    display: inline-block;
+    color: black;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: 400;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-button {
+    background-color: #89dee2;
+}
+
+.login-button:hover {
+    background-color: #5ccfd4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.register-button {
+    background-color: #d7baad;
+}
+
+.register-button:hover {
+    background-color: #c0a092;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #101e5a;
+}
+
+/* ===== SERVICIOS ===== */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.service-card {
+    position: relative;
+    min-height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(93, 128, 182, 0.7);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover::before {
+    opacity: 0.6;
+}
+
+.service-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.service-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.linea {
+    border: none;
+    height: 3px;
+    background: white;
+    width: 80px;
+    margin: 1rem auto;
+    opacity: 0.8;
+    transition: width 0.3s ease;
+}
+
+.service-card:hover .linea {
+    width: 120px;
+}
+
+/* ===== SOBRE NOSOTROS ===== */
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.about-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.mission-vision {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.mission-card, 
+.vision-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-card::before,
+.vision-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #5d80b6;
+}
+
+.mission-card:hover,
+.vision-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.mission-card h3,
+.vision-card h3 {
+    color: #101e5a;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.mission-card h3::after,
+.vision-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #89dee2;
+}
+
+.mission-card p,
+.vision-card p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* Efecto de icono decorativo */
+.mission-card::after {
+    content: '✚';
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: rgba(93, 128, 182, 0.1);
+}
+
+.vision-card::after {
+    content: '👁️';
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: rgba(93, 128, 182, 0.1);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #101e5a;
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+/* ===== MODALES ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(3px);
+}
+
+.modal-content,
+.modal-content-1 {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    animation: modalopen 0.4s;
+}
+
+.modal-content {
+    max-width: 700px;
+}
+
+.modal-content-1 {
+    max-width: 400px;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #777;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #e74c3c;
+}
+
+.modal h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #101e5a;
+}
+
+/* Formularios */
+#registroForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.form-column {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, select, textarea {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #5d80b6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(93, 128, 182, 0.2);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    padding: 0.9rem;
+    background-color: #527c88;
+    font-family: "Roboto Condensed", sans-serif;
+    color: white;
+    font-weight: 400;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #2e4450;
+    transform: translateY(-2px);
+}
+
+/* Agregar al final del archivo */
+.error-message {
+    color: #d9534f;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f8d7da;
+    border-radius: 4px;
+    border: 1px solid #f5c6cb;
+}
+
+.modal-content-1 input.error {
+    border-color: #d9534f;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .header-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .slogan {
+        font-size: 1.2rem;
+    }
+    
+    .header-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .semi-transparent-nav ul {
+        gap: 1.5rem;
+    }
+    
+    .services {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content,
+    .modal-content-1 {
+        width: 90%;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .semi-transparent-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    
+    .container {
+        padding: 2rem 1rem;
+    }
+}
